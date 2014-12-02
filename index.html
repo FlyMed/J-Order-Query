@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+
+<!-- Reset IE Compatible to Edge -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<title>簡易查詢 | 期刊訂購資料庫</title>
+<meta name="description" content="期刊訂購資料庫簡易查詢">
+<meta name="author" content="飛資得醫學資訊">
+<link rel="shortcut icon" href="#"/>
+<link rel="bookmark" href="#"/>
+
+<!-- Mobile Specific Metas
+================================================== -->
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. -->
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<!-- JavaScript
+================================================== -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/footable.all.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<!-- Facebook Open Graph Meta 預留到時候要套程式改 meta tag
+================================================== -->
+<meta property="og:url" content="/">
+<meta property="og:title" content="簡易查詢">
+<meta property="og:site_name" content="期刊訂購資料庫"> 
+<meta property="og:description" content="期刊訂購資料庫簡易查詢">
+<meta property="og:image" content="#">
+<meta property="og:type" content="article">
+</head>
+
+<body>
+
+<!-- 置頂主選單 / 開始 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">期刊訂購資料庫</a>
+    </div>
+    <!-- <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a>
+            </li>
+            <li><a href="#about">About</a>
+            </li>
+            <li><a href="#contact">Contact</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a>
+                    </li>
+                    <li><a href="#">Another action</a>
+                    </li>
+                    <li><a href="#">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a>
+                    </li>
+                    <li><a href="#">One more separated link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div> -->
+    <!--/.nav-collapse -->
+</div>
+
+</nav>
+<!-- 置頂主選單 / 結束 -->
+
+<!-- 頁面內容 / 開始 -->
+<div class="container">
+
+	<div class="page-content">
+
+		<div class="row">
+			
+			<div class="col-md-12">
+				
+				<!-- 標題 -->
+				<h2>簡易查詢</h2>
+
+				<!-- 說明文字 -->
+				<p class="lead">請於下方輸入字詞搜尋，搜尋結果將即時呈現。</p>
+
+				<!-- 檢索功能 / 開始 -->
+				<form id="j-list-control" class="form-inline">
+					<!-- 搜尋框 -->
+					<div id="list-search" class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-search fa-2x text-primary"></i></span>
+							<input id="filter" class="form-control" type="text" placeholder="搜尋">
+						</div>
+					</div>
+					<!-- 篩選功能 -->
+					<div id="list-filter" class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-filter fa-2x text-primary"></i></span>
+							<select id="filter" class="form-control filtering">
+								<option>備註</option>
+								<option value="A">2014 Order</option>
+								<option value="B">2015 Order</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<a href="#clear" class="clear-filter" title="取消篩選">清除</a>
+					</div>
+				</form>
+				<!-- 檢索功能 / 結束 -->
+
+				<!-- 清單 / 開始 -->
+				<table class="table table-hover j-list footable" data-filter="#filter" data-filter-minimum="1" data-page-size="5">
+					<thead>
+					    <tr>
+					        <th class="j-list-no" data-class="text-center">No</th>
+					        <th class="j-list-title">刊名 (Journal Title)</th>
+					        <th class="j-list-issn">ISSN</th>
+					        <th class="j-list-eiisn">eISSN</th>
+					        <th class="j-list-publisher">Publisher</th>
+					        <th class="j-list-order-number">訂購編號</th>
+					        <th class="j-list-note" data-sort-ignore="true">其他備註</th>
+					    </tr>
+				    </thead>
+				    <tbody>
+					    <tr>
+					        <td>1</td>
+					        <td>AACN Bold Voices</td>
+					        <td>1948-7088</td>
+					        <td>1948-7096</td>
+					        <td>American Association of Critical-Care Nurses</td>
+					        <td>201501</td>
+					        <td>2015 Order</td>
+					    </tr>
+					    <tr>
+					        <td>2</td>
+					        <td>American Journal of Critical Care</td>
+					        <td>1062-3264</td>
+					        <td>1937-710X</td>
+					        <td>American Association of Critical-Care Nurses</td>
+					        <td>201502</td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>3</td>
+					        <td>American Journal of Health-System Pharmacy</td>
+					        <td>1079-2082</td>
+					        <td></td>
+					        <td>American Society of Health-System Pharmacists</td>
+					        <td>201503</td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>4</td>
+					        <td>American Journal of Occupational Therapy</td>
+					        <td>0272-9490</td>
+					        <td></td>
+					        <td>The American Occupational Therapy Association</td>
+					        <td>201504</td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>5</td>
+					        <td>Annals of Internal Medicine</td>
+					        <td>0003-4819</td>
+					        <td>1539-3704</td>
+					        <td>American College of Physicians</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>6</td>
+					        <td>AORN Journal</td>
+					        <td>0001-2092</td>
+					        <td></td>
+					        <td>Association of Operating Room Nurses, Inc.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>7</td>
+					        <td>Audiology Today</td>
+					        <td>1535-2609</td>
+					        <td></td>
+					        <td>The_American_Academy_of_Audiology</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>8</td>
+					        <td>British Journal of Psychiatry</td>
+					        <td>0007-1250</td>
+					        <td>1472-1465</td>
+					        <td>The Royal College of Psychiatrists</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>9</td>
+					        <td>Canadian Journal of Rural Medicine</td>
+					        <td>1203-7796</td>
+					        <td>1488-237X</td>
+					        <td>Canadian Medical Association</td>
+					        <td></td>
+					        <td>2014 Order</td>
+					    </tr>
+					    <tr>
+					        <td>10</td>
+					        <td>Canadian Journal of Surgery</td>
+					        <td>0008-428X</td>
+					        <td>1488-2310</td>
+					        <td>Canadian Medical Association</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>11</td>
+					        <td>Case Connector</td>
+					        <td>2160-3251</td>
+					        <td></td>
+					        <td>The Journal of Bone and Joint Surgery, Inc.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>12</td>
+					        <td>Chest</td>
+					        <td>0012-3692</td>
+					        <td></td>
+					        <td>American College of Chest Physicians</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>13</td>
+					        <td>Clinical Diabetes</td>
+					        <td>0891-8929</td>
+					        <td></td>
+					        <td>American Diabetes Association</td>
+					        <td></td>
+					        <td>2015 Order</td>
+					    </tr>
+					    <tr>
+					        <td>14</td>
+					        <td>Clinical Medicine</td>
+					        <td>1470-2118</td>
+					        <td></td>
+					        <td>Royal College of Physicians</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>15</td>
+					        <td>CMAJ Canadian Medical Association Journal</td>
+					        <td>0820-3946</td>
+					        <td>1488-2329</td>
+					        <td>Canadian Medical Association</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>16</td>
+					        <td>Critical Care Nurse</td>
+					        <td>0279-5442</td>
+					        <td>1940-8250</td>
+					        <td>American Association of Critical-Care Nurses</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>17</td>
+					        <td>Diabetes</td>
+					        <td>0012-1797</td>
+					        <td></td>
+					        <td>American Diabetes Association</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>18</td>
+					        <td>Diabetes Care</td>
+					        <td>0149-5992</td>
+					        <td></td>
+					        <td>American Diabetes Association</td>
+					        <td></td>
+					        <td>2014 Order</td>
+					    </tr>
+					    <tr>
+					        <td>19</td>
+					        <td>Endocrine Reviews</td>
+					        <td>0163-769X</td>
+					        <td></td>
+					        <td>The Endocrine Society</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>20</td>
+					        <td>Endocrinology</td>
+					        <td>0013-7227</td>
+					        <td></td>
+					        <td>The Endocrine Society</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>21</td>
+					        <td>Essential Surgical Techniques</td>
+					        <td>2160-2204</td>
+					        <td></td>
+					        <td>The Journal of Bone and Joint Surgery, Inc.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>22</td>
+					        <td>JAMA Psychiatry</td>
+					        <td>2168-622X</td>
+					        <td>2168-6238</td>
+					        <td>American Medical Association</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>23</td>
+					        <td>Journal of Bone & Joint Surgery - American Volume</td>
+					        <td>0021-9355</td>
+					        <td>1535-1386</td>
+					        <td>Journal of Bone & Joint Surgery, Inc.</td>
+					        <td></td>
+					        <td>2015 Order</td>
+					    </tr>
+					    <tr>
+					        <td>24</td>
+					        <td>Journal of Clinical Endocrinology & Metabolism</td>
+					        <td>0021-972X</td>
+					        <td></td>
+					        <td>The Endocrine Society</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>25</td>
+					        <td>Journal of Clinical Investigation</td>
+					        <td>0021-9738</td>
+					        <td>1558-8238</td>
+					        <td>American Society for Clinical Investigation</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>26</td>
+					        <td>Journal of Clinical Rehabilitative Tissue Engineering Research</td>
+					        <td>1673-8225</td>
+					        <td></td>
+					        <td>Publishing House of the Journal of Clinical Rehabilitation Tissue Engineering Research</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>27</td>
+					        <td>Journal of Medical Microbiology</td>
+					        <td>0022-2615</td>
+					        <td>1473-5644</td>
+					        <td>Society for General Microbiology</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>28</td>
+					        <td>Journal of Orthopaedic & Sports Physical Therapy</td>
+					        <td>0190-6011</td>
+					        <td>1938-1344</td>
+					        <td>Journal of Orthopaedic & Sports Physical Therapy</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>29</td>
+					        <td>Journal of Psychiatry & Neuroscience</td>
+					        <td>1180-4882</td>
+					        <td>1488-2434</td>
+					        <td>Canadian Medical Association</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>30</td>
+					        <td>Journal of the American Academy of Audiology</td>
+					        <td>1050-0545</td>
+					        <td>2157-3107</td>
+					        <td>The_American_Academy_of_Audiology</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>31</td>
+					        <td>Journal of the American Board of Family Medicine</td>
+					        <td>1558-7118</td>
+					        <td></td>
+					        <td>The American Board of Family Medicine</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>32</td>
+					        <td>Molecular Endocrinology</td>
+					        <td>0888-8809</td>
+					        <td></td>
+					        <td>The Endocrine Society</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>33</td>
+					        <td>Neural Regeneration Research</td>
+					        <td>1673-5374</td>
+					        <td></td>
+					        <td>Publishing House of Neural Regeneration Research</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>34</td>
+					        <td>Nurse Researcher</td>
+					        <td>1351-5578</td>
+					        <td></td>
+					        <td>RCN Publishing Company Ltd.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>35</td>
+					        <td>Nursing Education Perspectives</td>
+					        <td>1536-5026</td>
+					        <td></td>
+					        <td>National League for Nursing, Inc.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>36</td>
+					        <td>Nursing Management (Harrow)</td>
+					        <td>1354-5760</td>
+					        <td></td>
+					        <td>RCN Publishing Company Ltd.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>37</td>
+					        <td>Nursing Standard</td>
+					        <td>0029-6570</td>
+					        <td></td>
+					        <td>RCN Publishing Company Ltd.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>38</td>
+					        <td>Texas Heart Institute Journal</td>
+					        <td>0730-2347</td>
+					        <td></td>
+					        <td>Texas Heart Institute</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+					    <tr>
+					        <td>39</td>
+					        <td>The Bone & Joint Journal</td>
+					        <td>2049-4394</td>
+					        <td>2049-4408</td>
+					        <td>The Journal of Bone and Joint Surgery, Inc.</td>
+					        <td></td>
+					        <td></td>
+					    </tr>
+				    </tbody>
+				    <tfoot>
+				    	<tr>
+				    		<td colspan="7" class="text-center">
+				    			<ul class="pagination hide-if-no-paging"></ul>
+				    		</td>
+				    	</tr>
+				    </tfoot>
+				</table>
+				<!-- 清單 / 結束 -->
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+<!-- 頁面內容 / 結束 -->
+
+<!-- Footer / 開始 -->
+<div class="footer">
+
+	<!-- 容器 / 開始 -->
+	<div class="container">
+
+	    <!-- <div class="clearfix"></div> -->
+
+		<!-- 版權宣告 -->
+		<div class="footer-copyright text-center">&copy; 2014 <a href="http://medinfo.flysheet.com.tw" target="_blank" title="飛資得醫學資訊股份有限公司" alt="飛資得醫學資訊股份有限公司">飛資得醫學資訊股份有限公司</a> All rights reserved.</div>
+
+	</div>
+    <!-- 容器 / 結束 -->
+
+</div>
+<!-- Footer / 結束 -->
+
+</body>
+
+</html>
