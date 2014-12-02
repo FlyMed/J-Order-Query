@@ -160,6 +160,12 @@ table > tbody a:focus {
 	margin-left: 20px;
 }
 
+@media (max-width: 768px) {
+    #list-filter {
+        margin-left: 0;
+    }
+}
+
 table.j-list > tbody {
     border-bottom: 1px solid #ddd; 
 }

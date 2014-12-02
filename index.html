@@ -52,12 +52,12 @@
 
 <div class="container">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </button>
+        </button> -->
         <a class="navbar-brand" href="#">期刊訂購資料庫</a>
     </div>
     <!-- <div id="navbar" class="collapse navbar-collapse">
@@ -138,13 +138,13 @@
 				<table class="table table-hover j-list footable" data-filter="#filter" data-filter-minimum="1" data-page-size="5">
 					<thead>
 					    <tr>
-					        <th class="j-list-no" data-class="text-center">No</th>
-					        <th class="j-list-title">刊名 (Journal Title)</th>
-					        <th class="j-list-issn">ISSN</th>
-					        <th class="j-list-eiisn">eISSN</th>
-					        <th class="j-list-publisher">Publisher</th>
-					        <th class="j-list-order-number">訂購編號</th>
-					        <th class="j-list-note" data-sort-ignore="true">其他備註</th>
+					        <th class="j-list-no" data-class="j-list-no text-center">No</th>
+					        <th class="j-list-title" data-class="j-list-title">刊名 (Journal Title)</th>
+					        <th class="j-list-issn" data-hide="phone,tablet">ISSN</th>
+					        <th class="j-list-eiisn" data-hide="phone,tablet">eISSN</th>
+					        <th class="j-list-publisher" data-class="j-list-publisher">Publisher</th>
+					        <th class="j-list-order-number" data-hide="phone">訂購編號</th>
+					        <th class="j-list-note" data-hide="phone" data-sort-ignore="true">其他備註</th>
 					    </tr>
 				    </thead>
 				    <tbody>
